@@ -1,5 +1,4 @@
 import { Injectable } from '@nestjs/common';
-import { CreateUserType } from 'src/utils/types';
 
 @Injectable()
 export class UserService {
@@ -30,7 +29,10 @@ export class UserService {
     },
   ];
 
-  createUser(newUser: CreateUserType) {
+  createUser(newUser: any) {
     return this.users.push(newUser);
+  }
+  getUsers() {
+    return this.users;
   }
 }
